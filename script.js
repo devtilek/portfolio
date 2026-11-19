@@ -17,7 +17,8 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 document.querySelector('#copy-email').addEventListener('click', async () => {
   const status = document.querySelector('#copy-status');
   try {
-    await navigator.clipboard.writeText('aktilekkorganbek41@gmail.com');
+    const address = document.querySelector('.email').getAttribute('href').slice('mailto:'.length);
+    await navigator.clipboard.writeText(address);
     status.textContent = 'Email скопирован.';
   } catch {
     status.textContent = 'Выдели и скопируй адрес выше: браузер ограничил доступ к буферу обмена.';
