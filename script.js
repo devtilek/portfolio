@@ -1,6 +1,5 @@
-document.documentElement.classList.add('js');
 const sections = document.querySelectorAll('.reveal');
-if ('IntersectionObserver' in window) {
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -10,6 +9,7 @@ if ('IntersectionObserver' in window) {
     });
   }, { threshold: 0.08 });
   sections.forEach(section => observer.observe(section));
+  document.documentElement.classList.add('js');
 } else {
   sections.forEach(section => section.classList.add('visible'));
 }
