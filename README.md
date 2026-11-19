@@ -4,9 +4,15 @@
 
 ## Открыть
 
-1. Перенесите папку `front` на рабочий стол, если нужно.
-2. В VS Code выберите **File → Open Folder → front**.
-3. Откройте `index.html` двойным щелчком в Проводнике. Либо используйте расширение VS Code Live Server и **Open with Live Server**.
+1. Клонируйте репозиторий: `git clone https://github.com/devtilek/portfolio.git`.
+2. Откройте папку `portfolio` в VS Code.
+3. Откройте `index.html` в браузере или запустите `python -m http.server 8000` из папки проекта и перейдите на `http://localhost:8000`.
+
+Для копирования email рекомендуется локальный HTTP-сервер или HTTPS: Clipboard API зависит от контекста безопасности браузера.
+
+## Проверки
+
+Установите Node.js 24 и выполните `node --check script.js` и `node --test`. Тесты проверяют локальные ссылки, ресурсы, доступность анимации и копирование email. GitHub Actions запускает их при push и pull request.
 
 ## Изменить
 
